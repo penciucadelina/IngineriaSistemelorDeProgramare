@@ -38,7 +38,7 @@ public class VendingMachineTest {
 
         VendingMachine vendingMachine = new VendingMachine();
 
-        String expected1 = "Insufficient credit, insert coins.";
+        String expected1 = "Insufficient credit, insert  coins.";
         String actual1 = vendingMachine.selectProduct(1);
         assertEquals(expected1, actual1);
 
