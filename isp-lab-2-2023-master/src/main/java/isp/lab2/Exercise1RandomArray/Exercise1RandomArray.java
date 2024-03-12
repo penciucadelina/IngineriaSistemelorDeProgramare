@@ -29,7 +29,7 @@ public class Exercise1RandomArray {
         }
 
         int[] x = new int[2];
-        x[0] = min;
+        x[0] = min ;
         x[1] = max;
         return x;
     }
