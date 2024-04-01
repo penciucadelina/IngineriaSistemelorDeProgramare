@@ -2,7 +2,7 @@ package aut.isp.lab4.exercise3;
 
 import aut.isp.lab4.exercise2.FishFeeder;
 
-public class AquariumControllerAg {
+public class AquariumController {
 
     private String manufacturer;
     private String model;
@@ -12,7 +12,7 @@ public class AquariumControllerAg {
 
 
     // Constructor
-    public AquariumControllerAg(String manufacturer, String model, float currentTime, float feedingTime, FishFeeder feeder) {
+    public AquariumController(String manufacturer, String model, float currentTime, float feedingTime, FishFeeder feeder) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.currentTime = currentTime;

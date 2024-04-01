@@ -1,4 +1,5 @@
-package aut.isp.lab4.exercise5;
+package aut.isp.lab4.exercise6;
+
 
 public class Alarm extends Actuator {
 
@@ -17,6 +18,4 @@ public class Alarm extends Actuator {
         super.turnOff();
         System.out.println("The alarm is OFF");
     }
-
-
 }

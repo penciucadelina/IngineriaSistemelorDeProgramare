@@ -1,9 +1,13 @@
-package aut.isp.lab4.exercise5;
+package exercise5;
 
 import aut.isp.lab4.exercise2.FishFeeder;
+import aut.isp.lab4.exercise5.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class Exercise5 {
-    public static void main(String[] args) {
+public class AquariumControllerTest {
+    @Test
+    public void testChecks() {
         FishFeeder fishFeeder = new FishFeeder("A40", "Pro");
         Sensor sensor = new Sensor("Samsung", "S10", "L/gC");
         LevelSensor levelSensor = new LevelSensor("Apple", "Pro", "L", 18.0F);
@@ -14,20 +18,23 @@ public class Exercise5 {
         AquariumController aquariumController = new AquariumController(fishFeeder, "Samsung", "Pro",
                 30, 20.0F, levelSensor, temperatureSensor, alarm, heater);
 
-        System.out.println(aquariumController);
-        aquariumController.setFeedingTime(10.00F);
-        aquariumController.setCurrentTime(14.00F);
-        aquariumController.setCurrentTime((float) 12.00F);
-
         aquariumController.checkTemperature();
+        Assert.assertTrue(heater.getisOn());
+
         temperatureSensor.setValue(30);
         aquariumController.checkTemperature();
-        temperatureSensor.setValue(23);
+        Assert.assertFalse(heater.getisOn());
+
+        temperatureSensor.setValue(30);
         aquariumController.checkTemperature();
+        Assert.assertFalse(heater.getisOn());
 
         aquariumController.checkWaterLevel();
-        levelSensor.setValue(20);
+        Assert.assertTrue(alarm.getisOn());
+
+        levelSensor.setValue(21);
         aquariumController.checkWaterLevel();
+        Assert.assertFalse(alarm.getisOn());
 
     }
 }

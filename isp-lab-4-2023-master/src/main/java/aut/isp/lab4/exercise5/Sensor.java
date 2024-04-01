@@ -5,32 +5,22 @@ public class Sensor {
     private String model;
     private String unitOfMeasurement;
 
-    // Constructor
+    public Sensor() {
+    }
+
     public Sensor(String manufacturer, String model, String unitOfMeasurement) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.unitOfMeasurement = unitOfMeasurement;
     }
 
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-
-    public String getModel() {
-        return model;
-    }
-
-
-    public String getUnitOfMeasurement() {
-        return unitOfMeasurement;
-    }
-
-
     @Override
     public String toString() {
         return "Sensor{" +
-                "manufacturer=" + manufacturer + ", model=" + model + ", unitOfMeasurement=" + unitOfMeasurement;
+                "manufacturer='" + manufacturer + '\'' +
+                ", model='" + model + '\'' +
+                ", unitOfMeasurement='" + unitOfMeasurement + '\'' +
+                '}';
     }
 }
+

@@ -6,7 +6,7 @@ public class Exercise3 {
     public static void main(String[] args) {
         FishFeeder feeder = new FishFeeder("Example FishFeeder Manufacturer", "Example FishFeeder Model");
 
-        AquariumControllerAg controller = new AquariumControllerAg("Example Manufacturer", "Example Model", 10.5f, 12.0f, feeder);
+        AquariumController controller = new AquariumController("Example Manufacturer", "Example Model", 10.5f, 12.0f, feeder);
 
         controller.setCurrentTime(12.0f);
 
