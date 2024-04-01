@@ -10,6 +10,7 @@ public class Exercise4 {
         ticketManager.generateTickets();
 
         User user = new User("George");
+        
 
         PaymentGateway paymentGateway = new SimplePaymentGateway();
 

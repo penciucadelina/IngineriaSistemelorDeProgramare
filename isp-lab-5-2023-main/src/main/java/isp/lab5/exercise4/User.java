@@ -2,6 +2,7 @@ package isp.lab5.exercise4;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class User implements UserActions {
     public String name;
     private List<String> purchasedTickets; //bilete achizionate de user

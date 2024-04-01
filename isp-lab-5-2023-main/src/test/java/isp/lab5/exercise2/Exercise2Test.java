@@ -17,7 +17,9 @@ public class Exercise2Test {
     public void testChargeSmartPhone() {
         SmartPhone smartPhone = new SmartPhone();
         smartPhone.charge(20);
-        assertEquals(60, smartPhone.getBatteryLevel());
+
+        smartPhone.charge(10);
+        assertEquals(90,smartPhone.getBatteryLevel());
     }
 
     @Test
