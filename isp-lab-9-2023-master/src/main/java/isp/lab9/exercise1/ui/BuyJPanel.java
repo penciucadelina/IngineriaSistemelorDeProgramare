@@ -2,7 +2,6 @@ package isp.lab9.exercise1.ui;
 
 import isp.lab9.exercise1.services.UserPortfolio;
 import isp.lab9.exercise1.utils.Utils;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
@@ -85,9 +84,7 @@ public class BuyJPanel extends JPanel {
 
     }
 
-    /**
-     * Calculates the total transaction cost
-     */
+
     private void calculateTotalCostActionPerformed(JComboBox<String> symbolComboBox,
                                                    JTextField quantityTextField,
                                                    JTextField totalCostTextField,
