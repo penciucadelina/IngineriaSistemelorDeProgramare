@@ -1,51 +1,39 @@
 package isp.lab10.raceapp;
 
-import isp.lab10.raceapp.Car;
-import isp.lab10.raceapp.CarPanel;
-import isp.lab10.raceapp.SemaphorePanel;
-import isp.lab10.raceapp.SemaphoreThread;
-
-import javax.swing.*;
-
-
-import javax.swing.*;
-
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-
-        System.out.println("Race!");
-        JFrame frame1 = new JFrame("Semaphore");
-        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        SemaphorePanel semaphorePanel = new SemaphorePanel();
-        frame1.getContentPane().add(semaphorePanel);
-        frame1.pack();
-        frame1.setVisible(true);
-        SemaphoreThread semaphoreThread = new SemaphoreThread(semaphorePanel);
-        semaphoreThread.start();
-
-        JFrame frame = new JFrame("Car Race");
+        JFrame frame = new JFrame("Semaphore");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        CarPanel carPanel = new CarPanel();
-        frame.getContentPane().add(carPanel);
+        SemaphorePanel semaphorePanel = new SemaphorePanel();
+        frame.getContentPane().add(semaphorePanel);
         frame.pack();
-        frame.setSize(500, 300);
         frame.setVisible(true);
 
-        PlaySound sound = new PlaySound();
-
-        Car car1 = new Car("Red car", carPanel);
-        Car car2 = new Car("Blue car", carPanel);
-        Car car3 = new Car("Green car", carPanel);
-        Car car4 = new Car("Yellow car", carPanel);
-
+        SemaphoreThread semaphoreThread = new SemaphoreThread(semaphorePanel);
+        semaphoreThread.start();
         semaphoreThread.join();
 
+        TimerThread timerThread = new TimerThread();
+        timerThread.start();
 
+        JFrame carFrame = new JFrame("Car Race!");
+        carFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        CarPanel carPanel = new CarPanel();
+        carFrame.getContentPane().add(carPanel);
+        carFrame.pack();
+        carFrame.setSize(500, 300);
+        carFrame.setVisible(true);
+
+        PlaySound sound = new PlaySound();
         sound.playSound();
 
+        Car car1 = new Car("BMW", carPanel);
+        Car car2 = new Car("Dacia", carPanel);
+        Car car3 = new Car("Mercedes", carPanel);
+        Car car4 = new Car("Toyota", carPanel);
 
         car1.start();
         car2.start();
@@ -57,6 +45,14 @@ public class Main {
         car3.join();
         car4.join();
 
+
+        timerThread.stopTimer();
+        timerThread.join();
+
         sound.stopSound();
+
+        long time = timerThread.getTime();
+        System.out.println("Race finished in " + time / 1000.0f + " seconds");
     }
 }
+

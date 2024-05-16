@@ -1,12 +1,9 @@
+
 package isp.lab10.raceapp;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import java.io.File;
-import javax.sound.sampled.*;
 
 /**
  * @author mihai
@@ -31,10 +28,9 @@ public class PlaySound {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        isp.lab10.raceapp.PlaySound ps = new isp.lab10.raceapp.PlaySound();
+        PlaySound ps = new PlaySound();
         ps.playSound();
         Thread.sleep(15000);
         ps.stopSound();
     }
 }
-

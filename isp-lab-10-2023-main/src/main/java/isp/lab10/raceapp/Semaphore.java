@@ -1,39 +1,19 @@
+
 package isp.lab10.raceapp;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-import java.awt.*;
 import javax.swing.*;
-
-public class Semaphore {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Semaphore");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        isp.lab10.raceapp.SemaphorePanel semaphorePanel = new isp.lab10.raceapp.SemaphorePanel();
-
-        frame.getContentPane().add(semaphorePanel);
-        frame.pack();
-        frame.setVisible(true);
-
-        isp.lab10.raceapp.SemaphoreThread semaphoreThread = new isp.lab10.raceapp.SemaphoreThread(semaphorePanel);
-        semaphoreThread.start();
-    }
-}
+import java.awt.*;
 
 class SemaphoreThread extends Thread {
-    private isp.lab10.raceapp.SemaphorePanel semaphorePanel;
+    private SemaphorePanel semaphorePanel;
 
-    public SemaphoreThread(isp.lab10.raceapp.SemaphorePanel semaphorePanel) {
+    public SemaphoreThread(SemaphorePanel semaphorePanel) {
         this.semaphorePanel = semaphorePanel;
     }
 
     public void run() {
         try {
-            semaphorePanel.setGray();
+            semaphorePanel.setRed();
             Thread.sleep((int) (Math.random() * 5000) + 2000);
 
             semaphorePanel.setYellow();
@@ -55,8 +35,8 @@ class SemaphorePanel extends JPanel {
         color = Color.GRAY;
     }
 
-    public void setGray() {
-        color = Color.GRAY;
+    public void setRed() {
+        color = Color.RED;
         repaint();
     }
 

@@ -1,35 +1,7 @@
 package isp.lab10.raceapp;
-import java.awt.*;
-import java.io.File;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+
 import javax.swing.*;
-
-public class CarRace {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Car Race");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        CarPanel carPanel = new CarPanel();
-
-        frame.getContentPane().add(carPanel);
-        frame.pack();
-        frame.setSize(500,300);
-        frame.setVisible(true);
-
-        Car car1 = new Car("Red car", carPanel);
-        Car car2 = new Car("Blue car", carPanel);
-        Car car3 = new Car("Green car", carPanel);
-        Car car4 = new Car("Yellow car", carPanel);
-
-        car1.start();
-        car2.start();
-        car3.start();
-        car4.start();
-    }
-
-}
+import java.awt.*;
 
 class Car extends Thread {
     private String name;
@@ -37,22 +9,20 @@ class Car extends Thread {
     private CarPanel carPanel;
 
     public Car(String name, CarPanel carPanel) {
-        //set thread name;
         setName(name);
         this.name = name;
         this.carPanel = carPanel;
     }
 
     public void run() {
+        long startTime = System.currentTimeMillis();
         while (distance < 400) {
-            // simulate the car moving at a random speed
             int speed = (int) (Math.random() * 10) + 1;
             distance += speed;
 
             carPanel.updateCarPosition(name, distance);
 
             try {
-                // pause for a moment to simulate the passage of time
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -60,6 +30,9 @@ class Car extends Thread {
         }
 
         carPanel.carFinished(name);
+        long endTime = System.currentTimeMillis();
+        System.out.print(((endTime - startTime) / 1000.0f) + " seconds");
+        System.out.println();
     }
 }
 
@@ -68,10 +41,14 @@ class CarPanel extends JPanel {
     private String[] carNames;
     private Color[] carColors;
 
+    private int[] carOrder;
+    private int index = 0;
+
     public CarPanel() {
         carPositions = new int[4];
-        carNames = new String[]{"Red car", "Blue car", "Green car", "Yellow car"};
+        carNames = new String[]{"BMW", "Dacia", "Mercedes", "Toyota"};
         carColors = new Color[]{Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW};
+        carOrder = new int[4];
     }
 
     @Override
@@ -99,7 +76,12 @@ class CarPanel extends JPanel {
     }
 
     public void carFinished(String carName) {
-        System.out.println("Car finished race.");
+        int pos = index;
+        carOrder[pos] = getCarIndex(carName);
+        index++;
+        final String[] positions = {"first", "second", "third", "fourth"};
+        updateCarPosition(carName, 400);
+        System.out.print(carName + " finished the race on " + positions[pos] + " place in: ");
     }
 
     private int getCarIndex(String carName) {
