@@ -1,0 +1,2 @@
+Aircraft 12 is created. Ready to take off.
+Aircraft 12 is taxing.
