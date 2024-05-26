@@ -20,11 +20,11 @@ public class ATC {
         System.out.println("Aircraft with id " + id + " received command " + command);
     }
 
+
     public void showAircrafts() {
         aircraftById.forEach((id, aircraft) -> {
             System.out.println("ID: " + id + ", State: " + aircraft.getState());
         });
-        ;
     }
 }
 

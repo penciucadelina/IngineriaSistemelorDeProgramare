@@ -7,7 +7,7 @@ public class Exercise1 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("====================================================");
-        System.out.println("Welcome to Airtraffic Control System command center");
+        System.out.println("Welcome to AirTraffic Control System command center");
         System.out.println("1. Add aircraft");
         System.out.println("2. Take off command");
         System.out.println("3. Land command");
@@ -54,3 +54,4 @@ public class Exercise1 {
         }
     }
 }
+

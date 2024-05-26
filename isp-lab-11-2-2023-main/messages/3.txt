@@ -1,0 +1,11 @@
+Aircraft 3 is created. Ready to take off.
+Aircraft 3 is taxing.
+Aircraft 3 is taking off.
+Aircraft 3 is ascending.
+Aircraft 3 has reached altitude of 0 meters.
+Aircraft 3 has reached altitude of 1000 meters.
+Aircraft 3 has reached altitude of 2000 meters.
+Aircraft 3 has reached cruising altitude of 3000 meters.
+Aircraft 3 is cruising.
+Aircraft 3 is descending.
+Aircraft 3 has reached altitude of 3000 meters.
