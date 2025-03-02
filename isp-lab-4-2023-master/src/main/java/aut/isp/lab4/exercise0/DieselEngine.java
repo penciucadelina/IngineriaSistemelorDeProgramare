@@ -15,7 +15,7 @@ public class DieselEngine extends Engine {
      */
     public DieselEngine(int power, int fuelLevel) {
         //cuvantul cheie super se utilizeaza pentru a apela constructorul din clasa de baza.
-        super(power);
+         super(power);
         this.fuelLevel = fuelLevel;
     }
 

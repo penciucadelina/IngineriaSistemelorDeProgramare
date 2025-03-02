@@ -1,6 +1,7 @@
 package lab.template;
 
 
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 /**
@@ -30,6 +31,8 @@ public class Example {
     }
 
     public static void main(String[] args) {
+        System.out.println("penciuc.adelina@gmail.com");
+        System.out.println(new Scanner(System.in).nextLine().trim().toLowerCase().hashCode());
         System.out.println("It works!");
         LOG.info("It works!");
         System.out.println("Number of arguments received: " + args.length + " ");

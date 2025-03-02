@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 class LoginSystem {
     private Set<User> users=new HashSet<>();
-    private Map<String, ActiveSession> sessions;
+    private Map<String, ActiveSession> sessions=new HashMap<>();
     private OnlineStore store;
 
     public LoginSystem(OnlineStore store) {

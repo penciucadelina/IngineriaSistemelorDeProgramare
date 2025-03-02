@@ -17,7 +17,7 @@ public class Car {
 
     private String color;
 
-    private Car(Engine engine, String color) {
+    public Car(Engine engine, String color) {
         this.engine = engine;
         this.color = color;
         this.carAlarm = new CarAlarm();

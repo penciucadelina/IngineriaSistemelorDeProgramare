@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 class OnlineStore {
-    private List<Product> products;
+    private List<Product> products=new ArrayList<>();
     private Map<String, ActiveSession> sessions=new HashMap();
 
     void addSession(String username){

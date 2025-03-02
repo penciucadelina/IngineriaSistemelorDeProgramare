@@ -1,7 +1,7 @@
 package isp.lab5.exercise3;
 
 public class MonitoringService {
-    private Sensor[] sensors;
+    private Sensor[] sensors=new Sensor[10];
     private int count;
 
     public MonitoringService() {

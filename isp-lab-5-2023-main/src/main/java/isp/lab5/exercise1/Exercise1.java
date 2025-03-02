@@ -25,5 +25,13 @@ public class Exercise1 {
 
         System.out.println(order1);
         System.out.println(order2);
+
+        ProductCategory productCategory1=ProductCategory.valueOf("HOME_AND_GARDEN");
+        System.out.println(productCategory1);
+        System.out.println(productCategory1.compareTo(ProductCategory.TOYS));
+        System.out.println(productCategory1.ordinal());
+        System.out.println(productCategory1.name());
     }
 }
+
+

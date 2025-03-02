@@ -5,7 +5,7 @@ import java.util.Map;
 
 class ActiveSession {
     private String username;
-    private Map<Product, Integer> shoppingCart;
+    private Map<Product, Integer> shoppingCart=new HashMap<>();
 
     public ActiveSession(String username) {
         this.username = username;

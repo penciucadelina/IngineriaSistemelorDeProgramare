@@ -50,7 +50,7 @@ public class StockMarketJFrame extends JFrame {
         tabs.addTab("Market", new MarketJPanel(this));
         tabs.addTab("UserPortfolio", new PortfolioJPanel());
         tabs.addTab("Buy", new BuyJPanel(this));
-        tabs.addTab("Sell", new SellJPanel());
+        tabs.addTab("Sell", new SellJPanel(this));
 
         tabs.addChangeListener(e -> {
             if (tabs.getSelectedComponent() instanceof PortfolioJPanel portfolioJPanel) {

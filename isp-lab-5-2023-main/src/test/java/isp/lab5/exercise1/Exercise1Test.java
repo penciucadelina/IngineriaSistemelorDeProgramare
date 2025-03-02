@@ -12,8 +12,6 @@ import static org.junit.Assert.assertEquals;
  * @author Radu Miron
  * @version 1
  */
-//to string
-//pret total
 public class Exercise1Test {
     @Test
     public void testToString() {

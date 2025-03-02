@@ -1,0 +1,5 @@
+Aircraft 12 is created. Ready to take off.
+Aircraft 12 is taxing.
+Aircraft 12 is taking off.
+Aircraft 12 is ascending.
+Aircraft 12 has reached altitude of 0 meters.
